@@ -1078,7 +1078,7 @@ class Manager(object):
             log.error("No Google Maps API key provided - unable to reverse geocode.")
             return details
         try:
-            result = self.__gmaps_client.reverse_geocode((lat, lng))[0]
+            result = self.__gmaps_client.reverse_geocode((lat, lng), language="th")[0]
             loc = {}
             for item in result['address_components']:
                 for category in item['types']:
